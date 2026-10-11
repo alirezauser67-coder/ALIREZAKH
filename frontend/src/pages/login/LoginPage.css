@@ -283,6 +283,18 @@
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   backdrop-filter: blur(24px) saturate(180%);
   z-index: 2;
+  animation: login-card-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes login-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .login-card::before {
@@ -303,6 +315,18 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+.login-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(90deg, transparent, #3b82f6, #0ea5e9, transparent);
+  opacity: 0.7;
 }
 
 .login-app.is-dark .login-card::before {
@@ -326,6 +350,18 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
+  animation: fadeInDown 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .brand-name {
@@ -367,6 +403,18 @@
   min-height: 42px;
   margin: 12px 0 28px;
   letter-spacing: 0.3px;
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .welcome b {
@@ -392,6 +440,10 @@
   }
 }
 
+.login-form {
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
 .login-form .ant-form-item-label > label {
   color: var(--color-text);
   font-weight: 500;
@@ -410,4 +462,13 @@
 
 .submit-row {
   margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-card,
+  .brand,
+  .welcome,
+  .login-form {
+    animation: none !important;
+  }
 }

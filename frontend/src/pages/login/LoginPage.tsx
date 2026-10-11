@@ -9,7 +9,6 @@ import {
   Menu,
   Popover,
   Space,
-  Spin,
   message,
 } from 'antd';
 import {
@@ -28,6 +27,7 @@ import { FormField, rhfZodValidate } from '@/components/form/rhf';
 import { setMessageInstance } from '@/utils/messageBus';
 import { pauseAnimationsUntilLeave, useTheme } from '@/hooks/useTheme';
 import { LoginFormSchema, TwoFactorCodeSchema, type LoginFormValues } from '@/schemas/login';
+import BrandLoader from '@/components/ui/BrandLoader';
 import './LoginPage.css';
 
 const HEADLINE_INTERVAL_MS = 2000;
@@ -173,9 +173,7 @@ export default function LoginPage() {
 
           <div className="login-wrapper">
             {!fetched ? (
-              <div className="login-loading">
-                <Spin size="large" />
-              </div>
+              <BrandLoader text="Connecting" />
             ) : (
               <div className="login-card">
                 <div className="brand">

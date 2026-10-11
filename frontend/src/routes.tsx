@@ -1,8 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, type RouteObject } from 'react-router';
-import { Spin } from 'antd';
 
 import PanelLayout from '@/layouts/PanelLayout';
+import BrandLoader from '@/components/ui/BrandLoader';
 
 const IndexPage = lazy(() => import('@/pages/index/IndexPage'));
 const InboundsPage = lazy(() => import('@/pages/inbounds/InboundsPage'));
@@ -26,7 +26,7 @@ function withSuspense(node: React.ReactNode) {
             minHeight: '60vh',
           }}
         >
-          <Spin size="large" />
+          <BrandLoader />
         </div>
       }
     >

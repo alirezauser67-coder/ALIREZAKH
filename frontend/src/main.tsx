@@ -5,6 +5,7 @@ import 'antd/dist/reset.css';
 import '@/styles/utils.css';
 import '@/styles/page-shell.css';
 import '@/styles/page-cards.css';
+import '@/styles/motion.css';
 
 import { setupHttp } from '@/api/http-init';
 import { readyI18n } from '@/i18n/react';
@@ -29,5 +30,10 @@ readyI18n().then(() => {
         </QueryProvider>
       </ThemeProvider>,
     );
+  }
+  const splash = document.getElementById('ak-splash');
+  if (splash) {
+    splash.classList.add('fade-out');
+    setTimeout(() => splash.remove(), 600);
   }
 });

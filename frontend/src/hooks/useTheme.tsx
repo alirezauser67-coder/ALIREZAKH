@@ -38,6 +38,9 @@ const DARK_TOKENS = {
   colorBgContainer: '#131a2a',
   colorBgElevated: '#1a2338',
   colorPrimary: '#3b82f6',
+  colorInfo: '#3b82f6',
+  colorLink: '#60a5fa',
+  borderRadius: 8,
 };
 const ULTRA_DARK_TOKENS = {
   colorBgBase: '#000',
@@ -45,6 +48,9 @@ const ULTRA_DARK_TOKENS = {
   colorBgContainer: '#0a0e18',
   colorBgElevated: '#101828',
   colorPrimary: '#3b82f6',
+  colorInfo: '#3b82f6',
+  colorLink: '#60a5fa',
+  borderRadius: 8,
 };
 const DARK_LAYOUT_TOKENS = {
   bodyBg: '#0b0f1a',
@@ -91,6 +97,7 @@ const LIGHT_CONTRAST_TOKENS = {
   colorError: '#cf1322',
   colorErrorText: '#cf1322',
   colorSuccessText: '#237804',
+  borderRadius: 8,
 };
 const LIGHT_BUTTON_TOKENS = {
   colorPrimary: '#1d4ed8',

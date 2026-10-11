@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { message } from 'antd';
 import 'antd/dist/reset.css';
+import '@/styles/motion.css';
 
 import { setupHttp } from '@/api/http-init';
 import { applyDocumentTitle } from '@/utils';
@@ -27,5 +28,10 @@ readyI18n().then(() => {
         </QueryProvider>
       </ThemeProvider>,
     );
+  }
+  const splash = document.getElementById('ak-splash');
+  if (splash) {
+    splash.classList.add('fade-out');
+    setTimeout(() => splash.remove(), 600);
   }
 });

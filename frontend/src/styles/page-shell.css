@@ -6,7 +6,7 @@
 .nodes-page,
 .groups-page,
 .api-docs-page {
-  --bg-page: #e6e8ec;
+  --bg-page: #eef1f6;
   --bg-card: #ffffff;
   min-height: 100vh;
   background: var(--bg-page);
@@ -20,8 +20,8 @@
 .nodes-page.is-dark,
 .groups-page.is-dark,
 .api-docs-page.is-dark {
-  --bg-page: #1a1b1f;
-  --bg-card: #23252b;
+  --bg-page: #0b0f1a;
+  --bg-card: #131a2a;
 }
 
 .index-page.is-dark.is-ultra,
@@ -33,7 +33,7 @@
 .groups-page.is-dark.is-ultra,
 .api-docs-page.is-dark.is-ultra {
   --bg-page: #000;
-  --bg-card: #101013;
+  --bg-card: #0a0e18;
 }
 
 .index-page .ant-layout,
@@ -87,6 +87,28 @@
 
 .loading-spacer {
   min-height: calc(100vh - 120px);
+}
+
+/* Content entrance */
+.content-area > * {
+  animation: ak-page-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes ak-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-area > * {
+    animation: none !important;
+  }
 }
 
 /* Tall action menus (e.g. the inbound/client context menus) must stay inside
@@ -190,20 +212,20 @@ body.dark .ant-dropdown-menu-item-divider {
 /* Hosts page shares the standard panel page shell (background, transparent
    layout, content padding, summary-card padding). */
 .hosts-page {
-  --bg-page: #e6e8ec;
+  --bg-page: #eef1f6;
   --bg-card: #ffffff;
   min-height: 100vh;
   background: var(--bg-page);
 }
 
 .hosts-page.is-dark {
-  --bg-page: #1a1b1f;
-  --bg-card: #23252b;
+  --bg-page: #0b0f1a;
+  --bg-card: #131a2a;
 }
 
 .hosts-page.is-dark.is-ultra {
   --bg-page: #000;
-  --bg-card: #101013;
+  --bg-card: #0a0e18;
 }
 
 .hosts-page .ant-layout,
