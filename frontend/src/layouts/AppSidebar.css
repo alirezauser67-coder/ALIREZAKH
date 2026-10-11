@@ -19,15 +19,15 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #3b82f6, #0ea5e9, #3b82f6);
-  background-size: 200% auto;
-  animation: ak-side-shimmer 4s linear infinite;
+  height: 2px;
+  background: linear-gradient(90deg, #39ff14, #00b4ff, #ff1744, #39ff14);
+  background-size: 300% auto;
+  animation: ak-side-shimmer 6s linear infinite;
   z-index: 1;
 }
 
 @keyframes ak-side-shimmer {
-  to { background-position: 200% center; }
+  to { background-position: 300% center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -48,14 +48,21 @@
 
 .sider-brand,
 .drawer-brand {
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 1px;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   color: transparent;
-  background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+  background: linear-gradient(135deg, #39ff14, #00b4ff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px rgba(57, 255, 20, 0.3));
+}
+
+body.dark .sider-brand,
+body.dark .drawer-brand {
+  filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4)) drop-shadow(0 0 16px rgba(0, 180, 255, 0.2));
 }
 
 .sider-brand {
@@ -79,9 +86,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #0ea5e9, #3b82f6);
-  opacity: 0.85;
+  height: 1px;
+  background: linear-gradient(90deg, #39ff14, #00b4ff, transparent);
+  opacity: 0.6;
 }
 
 .brand-block {
@@ -126,8 +133,8 @@
 
 .sidebar-donate:hover,
 .sidebar-donate:focus-visible {
-  background-color: rgba(59, 130, 246, 0.12);
-  color: #3b82f6;
+  background-color: rgba(255, 23, 68, 0.12);
+  color: #ff1744;
   transform: scale(1.1);
   outline: none;
 }
@@ -379,12 +386,12 @@
 
 body.dark .ant-drawer-content,
 body.dark .ant-drawer-body {
-  background-color: #0b0f1a;
+  background-color: #020408;
 }
 
 html[data-theme='ultra-dark'] body.dark .ant-drawer-content,
 html[data-theme='ultra-dark'] body.dark .ant-drawer-body {
-  background-color: #030508;
+  background-color: #000;
 }
 
 body.dark .ant-drawer-body .drawer-menu,
